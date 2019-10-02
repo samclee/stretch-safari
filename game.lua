@@ -92,8 +92,6 @@ local function load_map(name)
   cur_num = 0
   
   local new_goal = 0
-
-
   for k, obj in pairs(map.objects) do
     new_goal = new_goal + 1
     if obj.type == 'Subject' then
@@ -102,24 +100,21 @@ local function load_map(name)
                         x = obj.x, y = obj.y, w = obj.width, h = obj.height,
                       }))
     elseif obj.type == 'VisibleSubject' then
-      io.write('Current table: [')
-      for i,v in ipairs(subjects) do io.write(v.id .. ', ') end 
-      io.write(']\n')
-      
       table.insert(subjects, VisibleSubject:new({
                         id = obj.name,
                         x = obj.x, y = obj.y, w = obj.width, h = obj.height,
                         notice_spr = obj.properties.notice_spr,
                         idle_spr = obj.properties.idle_spr
                       }))
-      
-                      io.write('After creation: [')
-      for i,v in ipairs(subjects) do io.write(v.id .. ', ') end 
-      io.write(']\n\n')
+    elseif obj.type == 'MovingSubject' then
+      table.insert(subjects, MovingSubject:new({
+                        id = obj.name,
+                        x = obj.x, y = obj.y, w = obj.width, h = obj.height,
+                        notice_spr = obj.properties.notice_spr,
+                        idle_spr = obj.properties.idle_spr
+                      }))
     end
   end
-
-
   goal_num = new_goal
 end
 
@@ -170,7 +165,7 @@ function state:update(dt)
   foreach(subjects, function(subj)
     local i = get_interaction(cam_box, subj)
     if subj.active and i == 'contains' then cam.focused = true end
-    --subj:update(i)
+    subj:update(i)
   end)
 
 end
@@ -183,7 +178,7 @@ function state:draw()
   lg.translate(-off_x, -off_y)
     lg.draw(bg, 0, 0)
     foreach(subjects, function(subj)
-      --subj:draw()
+      subj:draw()
     end)
   lg.pop()
 
@@ -243,7 +238,7 @@ function state:keypressed(k)
     end)
 
     if cur_num == goal_num then
-      ti.after(2, function()
+      ti.after(1, function()
         gs.push(states.score, {lvl_num = self.lvl_num, score = score})
       end)
     end

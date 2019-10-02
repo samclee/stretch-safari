@@ -8,15 +8,10 @@ end
 
 function state:draw()
   if self.game_over then
-    
+    lg.printf('Thanks for playing!\n\nPress <space> to quit',0,10,lg.getWidth(),'center')
   else
-
+    lg.printf('Find all the animals!\n\nPress <space> to start',0,10,lg.getWidth(),'center')
   end
-end
-
-
-function state:update(dt)
-
 end
 
 function state:keypressed(k)

@@ -9,7 +9,7 @@ return {
   tilewidth = 100,
   tileheight = 100,
   nextlayerid = 3,
-  nextobjectid = 6,
+  nextobjectid = 8,
   properties = {},
   tilesets = {},
   layers = {
@@ -53,8 +53,8 @@ return {
           name = "giraffe",
           type = "VisibleSubject",
           shape = "rectangle",
-          x = 575.433,
-          y = 301.989,
+          x = 733.672,
+          y = 235.362,
           width = 100,
           height = 300,
           rotation = 0,
@@ -94,6 +94,38 @@ return {
           properties = {
             ["idle_spr"] = "snake",
             ["notice_spr"] = "snake2"
+          }
+        },
+        {
+          id = 6,
+          name = "shark",
+          type = "VisibleSubject",
+          shape = "rectangle",
+          x = 426.294,
+          y = 431.886,
+          width = 250,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["idle_spr"] = "shark",
+            ["notice_spr"] = "shark2"
+          }
+        },
+        {
+          id = 7,
+          name = "bee",
+          type = "MovingSubject",
+          shape = "rectangle",
+          x = 519.839,
+          y = 103.48,
+          width = 100,
+          height = 100,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["idle_spr"] = "bee",
+            ["notice_spr"] = "bee2"
           }
         }
       }

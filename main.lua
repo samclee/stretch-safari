@@ -56,7 +56,7 @@ function love.load()
   lg.setFont(fonts[14])
 
   gs.registerEvents()
-  gs.switch(states.game, {lvl_num = 2})
+  gs.switch(states.game, {lvl_num = 1})
 end
 
 function love.update(dt)

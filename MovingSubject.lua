@@ -9,14 +9,14 @@ end
 function MovingSubject:update(interaction)
   VisibleSubject:update(interaction)
 
-  self.x = self.x + 10 * self.dir
+  self.x = self.x + 6 * self.dir
 
   if self.x > 900 - self.w then
     self.x = 900 - self.w
     self.dir = -1
   elseif self.x < 0 then
     self.x = 0
-    dir = 1
+    self.dir = 1
   end
 
 end
