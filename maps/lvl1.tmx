@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="9" height="7" tilewidth="100" tileheight="100" infinite="0" nextlayerid="3" nextobjectid="4">
+ <layer id="1" name="Tile Layer 1" width="9" height="7">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="myobjects">
+  <object id="1" name="stretch" type="Subject" x="100" y="200" width="300" height="100"/>
+  <object id="2" name="safari" type="Subject" x="600" y="100" width="100" height="400"/>
+  <object id="3" name="star" type="Subject" x="700" y="500" width="100" height="100"/>
+ </objectgroup>
+</map>

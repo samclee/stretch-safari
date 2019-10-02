@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="9" height="7" tilewidth="100" tileheight="100" infinite="0" nextlayerid="3" nextobjectid="6">
+ <layer id="1" name="Tile Layer 1" width="9" height="7">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="myobjects">
+  <object id="3" name="giraffe" type="VisibleSubject" x="575.433" y="301.989" width="100" height="300">
+   <properties>
+    <property name="idle_spr" value="giraffe"/>
+    <property name="notice_spr" value="giraffe2"/>
+   </properties>
+  </object>
+  <object id="4" name="dog" type="VisibleSubject" x="52.4688" y="424.926" width="300" height="100">
+   <properties>
+    <property name="idle_spr" value="dog"/>
+    <property name="notice_spr" value="dog2"/>
+   </properties>
+  </object>
+  <object id="5" name="snake" type="VisibleSubject" x="160.738" y="91.7609" width="200" height="250">
+   <properties>
+    <property name="idle_spr" value="snake"/>
+    <property name="notice_spr" value="snake2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

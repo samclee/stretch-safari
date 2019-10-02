@@ -4,49 +4,33 @@ lw = love.window
 lk = love.keyboard
 le = love.event
 
+setmetatable(_G, {
+  __index = require('cargo').init('/')
+})
 ti = require 'timer'
 gs = require 'gamestate'
-a8 = require 'anim8'
 rpl = require 'ripple'
 sti = require 'sti'
 class = require 'middleclass'
 states = {}
 states.game = require 'game'
+states.score = require 'score_screen'
+
+Subject = require 'Subject'
+VisibleSubject = require 'VisibleSubject'
+MovingSubject = require 'MovingSubject'
+
+fonts = {
+  [14] = fonts.PICO(14)
+}
+
+sfx = {
+  shutter = rpl.newSound(sounds.shutter),
+  whir = rpl.newSound(sounds.whir),
+  beep = rpl.newSound(sounds.beep),
+}
 
 -- utils
-function down() 
-  return lk.isDown('down')
-end
-
-function up() 
-  return lk.isDown('up')
-end
-
-function left() 
-  return lk.isDown('left')
-end
-
-function right() 
-  return lk.isDown('right')
-end
-
-function adown() 
-  return lk.isDown('s')
-end
-
-function aup() 
-  return lk.isDown('w')
-end
-
-function aleft() 
-  return lk.isDown('a')
-end
-
-function aright() 
-  return lk.isDown('d')
-end
-
-
 function add(tbl, val)
   table.insert(tbl, val)
 end
@@ -69,18 +53,17 @@ end
 function love.load()
   desk_w = lg.getWidth()
   desk_h = lg.getHeight()
+  lg.setFont(fonts[14])
 
   gs.registerEvents()
-  gs.switch(states.game)
+  gs.switch(states.game, {lvl_num = 2})
 end
 
 function love.update(dt)
-
+  ti.update(dt)
 end
 
-function love.draw()
-  
-end
+
 
 function love.keypressed(k)
   if k == 'escape' then
